@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function fttSearch() {
+            let query = document.getElementById("queryText").value;
+            let URL = "https://api.duckduckgo.com/?format=json&pretty=1&q=" + query;
+            let resposta =  document.getElementById("resposta");
+            
+            fetch(URL)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(message) {
+                    resposta.innerText = message["Abstract"];
+                });
+
+            console.log("Buscando: " + query)
+
+        }
+
+    </script>
+</head>
+<body>
+    <h1>FTT - Search</h1>
+    <hr>
+    <input type="search" id="queryText" required>
+    <input type="submit" onclick="fttSearch();">
+    <hr>
+    <p id="resposta">
+    </p>
+</body>
+</html>
