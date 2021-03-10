@@ -6,6 +6,7 @@ Simple Apache Cordova Search App
 - HTML5, CSS3, JavaScript
 - Vanilla JavaScript
 - WEB API DuckDuckGo
+- Bootstrap
 
 Reference:
 
